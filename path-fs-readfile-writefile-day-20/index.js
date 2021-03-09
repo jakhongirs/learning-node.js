@@ -9,9 +9,12 @@ const filePath = path.join(__dirname, "src", "data.txt")
 }) */
 
 const read = util.promisify(fs.readFile)
+const write = util.promisify(fs.writeFile)
 
 ;(async () => {
-  const data = await read(filePath, "utf8")
+  const content = await read(filePath, "utf8")
+  const data = JSON.parse(content)
 
-  console.log(data);
+  data.push("Sanjar")
+  write(filePath, JSON.stringify(data))
 })()
