@@ -1,3 +1,17 @@
-body{
-  background-color: dodgerblue;
+.news__list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.news__item{
+  width: 33%;
+}
+
+img{
+  width: 100%;
 }

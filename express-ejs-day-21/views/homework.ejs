@@ -8,7 +8,15 @@
   <title>Document</title>
 </head>
 <body>
-  <h1><%=name  %></h1>
-  <a href="/homework">homework</a>
+  
+  <ul class="news__list">
+    <% for(let info of news){ %>
+      <li class="news__item">
+        <h2><%=info.title %></h2>
+        <img src="<%=info.urlToImage %>" alt="" width="100" height="400">
+      </li>
+    <% } %>
+  </ul>
+
 </body>
 </html>
