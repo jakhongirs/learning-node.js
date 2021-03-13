@@ -1,0 +1,76 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies fetch</title>
+</head>
+
+<body>
+  
+  <ul id="movies-api"></ul>
+  
+  <script type="text/javascript">
+    
+    const apiURL = "http://172.20.10.3:5001";
+    
+    async function movieFetch() {
+      
+      const request = new Request(apiURL + "/movies");
+      
+      try {
+        const response = await fetch(request)
+        
+        if (response.status >= 200 && response.status <= 299) {
+          
+          if ("caches" in window) {
+            const cache = await caches.open("my-api-file")
+            cache.add(request)
+          }
+          
+          let apiList = document.getElementById("movies-api");
+          for (let movie of await response.json()) {
+            
+            let liElement = document.createElement("li");
+            liElement.textContent = movie.name;
+            
+            apiList.appendChild(liElement)
+          }
+        }
+      }
+      
+      catch (error) {
+        
+        console.log("Server is failed: ", error);
+        
+        if ("caches" in window) {
+          
+          const cache = await caches.open("my-api-file");
+          
+          const response = await cache.match(request);
+          
+          if (response && response.status >= 200 && response.status <= 299) {
+            
+            let apiList = document.getElementById("movies-api");
+            for (let movie of await response.json()) {
+              
+              let liElement = document.createElement("li");
+              liElement.textContent = movie.name;
+              
+              apiList.appendChild(liElement)
+            }
+          }
+        }
+        else {
+          console.log(error)
+        }
+      }
+    }
+    
+    movieFetch();
+  </script>
+</body>
+
+</html>
