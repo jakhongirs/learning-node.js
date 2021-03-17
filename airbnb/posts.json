@@ -1,0 +1,23 @@
+[
+    {
+        "id": "96aeaa07-5800-4f7e-8827-231b2707436f",
+        "holder_id": "e1a43b09-fc11-4278-a30c-c3b9d4a3f778",
+        "state_name": "Qarshi",
+        "roomCount": 3,
+        "address": "Yunusobod"
+    },
+    {
+        "id": "80f1ee85-cd99-497c-948d-3d14e472161c",
+        "holder_id": "dbb0bce2-7f0e-4544-bc0d-f3c3e09aec59",
+        "state_name": "Qarshi",
+        "roomCount": 3,
+        "address": "Yunusobod"
+    },
+    {
+        "id": "5075c852-f49b-4b7b-923e-99dccb9bbbef",
+        "holder_id": "04cbc709-17f6-4e90-93ca-c82e16ffbe31",
+        "state_name": "Andijan",
+        "roomCount": 3,
+        "address": "Yunusobod"
+    }
+]
