@@ -1,7 +1,7 @@
 const express = require("express")
 const fileUpload = require("express-fileupload")
 const path = require("path")
-/* const { v4 } = require("uuid") */
+
 
 const app = express()
 app.use("/uploads",express.static(path.join(__dirname,"uploads")))
