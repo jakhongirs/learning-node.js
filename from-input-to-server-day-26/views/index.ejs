@@ -4,17 +4,45 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Uybor Clone</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./uploads/general.css">
+  <link rel="stylesheet" href="./uploads/app.css">
+  <title>Airdorm</title>
 </head>
 <body>
   
-  <form method="POST" action="http://172.16.2.217:4000/upload" enctype="multipart/form-data">
-    <input type="text" name="fullName">
-    <input type="number" name="phoneNumber">
-
-    <input type="file" name="userPhoto" >
-    <button>Upload</button>
-  </form>
-
+  <header class="site-header">
+    <div class="container site-header__container">
+      <nav class="sitenav">
+        <a class="logo" href="/">
+          <img class="logo__img" src="./uploads/logo.svg" alt="" width="143" height="38">
+        </a>
+        
+        <ul class="sitenav__list">
+          <li class="sitenav__item">
+            <a class="sitenav__link" href="/">Barcha E'lonlar</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="publish">
+    <div class="container publish__container">
+      <h2 class="posts__heading publish__heading">E'lon Qo'shish:</h2>
+      <form class="publish__form" method="POST" action="http://localhost:4000/upload" enctype="multipart/form-data">
+        <input class="publish__input" type="text" name="fullName" placeholder="Ism" required>
+        <input class="publish__input" type="number" name="phoneNumber" placeholder="Telefon Raqam" required>
+        <input class="publish__input" type="text" name="region" placeholder="Manzil" required>
+        <input class="publish__input" type="number" name="monthlyPrice" placeholder="Oylik Narxi" required>
+        <input class="publish__input" type="number" name="roomCount" placeholder="Xonalar Soni" required>
+        
+        <input class="publish__file" type="file" name="userPhoto" required>
+        <button class="publish__submit">Yuklash</button>
+      </form>
+    </div>
+  </section>
+  
 </body>
 </html>

@@ -17,7 +17,6 @@ app.use((req, res, next) => {
 
 app.use(express.json())
 app.use(fileUpload())
-app.use("/uploads",express.static(path.join(__dirname,"uploads")))
 
 const read = fs.readFile
 const write = fs.writeFile
@@ -25,6 +24,8 @@ const write = fs.writeFile
 //EJS
 app.engine("ejs", ejs.renderFile)
 app.set("view engine", "ejs")
+//Making Static File:
+app.use("/uploads", express.static(path.join(__dirname,"uploads")))
 
 app.get("/", async (req, res) => {
   const response = await read(filePath, "utf8")
@@ -53,7 +54,7 @@ app.get("/users",async(req,res)=> {
 //Posting photo:
 app.post("/upload", async (req, res) => {
 
-  if (!req.files) {return res.send("hello")}
+  if (!req.files) {return res.send("please upload photo")}
 
   const file = req.files.userPhoto
 
@@ -72,6 +73,9 @@ app.post("/upload", async (req, res) => {
     
     const newObj = {
       username: req.body.fullName,
+      monthlyPrice: req.body.monthlyPrice,
+      postRegion: req.body.region,
+      roomCount: req.body.roomCount,
       phonenumber: req.body.phoneNumber,
       userPhoto: `/uploads/${prefixId}${file.name}`
     }
@@ -80,7 +84,7 @@ app.post("/upload", async (req, res) => {
     
     write(filePath, JSON.stringify(stringData, null, 4))
     
-    res.status(201).send({ message: "Created", })
+    res.status(201).redirect('/')
   } 
   else{
     return res.status(401).end()

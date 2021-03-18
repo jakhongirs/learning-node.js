@@ -1,0 +1,170 @@
+.site-header{
+  border-bottom: 1px solid #c1c1c1;
+}
+
+.site-header__container{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.sitenav{
+  display: flex;
+  align-items: center;
+}
+
+.sitenav__list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+}
+
+.sitenav__link{
+  text-decoration: none;
+  color: #484848;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.sitenav__link:hover{
+  opacity: 0.8;
+}
+
+.logo{
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover{
+  opacity: 0.8;
+}
+
+.logo__img{
+  display: block;
+}
+
+/* Posts Section */
+.posts__container{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.posts__heading{
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.posts__wrapper{
+  padding: 10px;
+}
+
+.posts__description{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.posts__region{
+  margin: 0;
+  color: #767676;
+  font-size: 12px;
+}
+
+.posts__room{
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.posts__list{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin: -18px;
+}
+
+.posts__item{
+  max-width: 250px;
+  margin: 18px;
+  border: 1px solid #c1c1c1;
+  min-height: 291px;
+}
+
+.posts__img{
+  max-width: 100%;
+  max-height: 200px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.posts__price{
+  margin: 0;
+  font-weight: 500;
+  padding: 4px 8px;
+  font-size: 14px;
+  border: 1px solid #FF5A5F;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.posts__footer{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.posts__text{
+  margin: 0;
+  font-size: 14px;
+}
+
+.posts__number{
+  margin: 0;
+  font-size: 14px;
+  margin-left: auto;
+}
+
+/* Publish: */
+.publish__container{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.publish__heading{
+  color: #FF5A5F;
+}
+
+.publish__form{
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+
+.publish__input{
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #E3E3E3;
+}
+
+.publish__input + .publish__input{
+  margin-top: 15px;
+}
+
+.publish__file{
+  margin-top: 15px;
+  border: 1px solid #E3E3E3;
+}
+
+.publish__submit{
+  margin-top: 15px;
+  max-width: 150px;
+  padding: 15px 30px;
+  color: white;
+  background-color: #FF5A5F;
+  border: none;
+}
+
+

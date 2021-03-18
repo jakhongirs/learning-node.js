@@ -4,25 +4,57 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./uploads/general.css">
+  <link rel="stylesheet" href="./uploads/app.css">
+  <title>Airdorm</title>
 </head>
 <body>
   
-  <ul>
-
-    <% for(let user of data){ %>
-      <li>
-        <img src="<%=user.userPhoto %>" alt="" width="250" height="250">
-
-        <h1>
-          <%=user.username %>
-        </h1>
-
-        <p><%=user.phoneNumber %></p>
-      </li>
-    <% } %>
-
-  </ul>
-
-</body>
-</html>
+  <header class="site-header">
+    <div class="container site-header__container">
+      <nav class="sitenav">
+        <a class="logo" href="">
+          <img class="logo__img" src="./uploads/logo.svg" alt="" width="143" height="38">
+        </a>
+        
+        <ul class="sitenav__list">
+          <li class="sitenav__item">
+            <a class="sitenav__link" href="/upload">E'lon joylash</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="posts">
+    <div class="container posts__container">
+      <h2 class="posts__heading">E'lonlar</h2>
+      <ul class="posts__list">
+        <% for(let user of data){ %>
+          <li class="posts__item">
+            <img class="posts__img" src="<%=user.userPhoto %>" alt="" width="290" height="200">
+            
+            <div class="posts__wrapper">
+              <div class="posts__description">
+                <p class="posts__price"><%=user.monthlyPrice %>$</p>
+                <p class="posts__region"><%=user.postRegion %></p>
+                <p class="posts__room"><%=user.roomCount %> xona</p>
+              </div>
+              
+              <div class="posts__footer">
+                <h2 class="posts__text"><%=user.username %></h2>
+                <p class="posts__number"><%=user.phonenumber %></p>
+              </div>
+            </div>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+  </body>
+  </html>
