@@ -1,0 +1,16 @@
+[
+    {
+        "id": "e9e8336f-286e-4b6d-83ac-731a7c96a9f3",
+        "username": "bdevpro",
+        "password": "bahodir2",
+        "role": "manager",
+        "fullname": "Bahodir Rajabov"
+    },
+    {
+        "id": "c7600f2a-ff0b-4966-a960-1a55d3e1de8f",
+        "username": "bdevpro",
+        "password": "bahodir1",
+        "role": "admin",
+        "fullname": "jakhongir sagdullaev"
+    }
+]
