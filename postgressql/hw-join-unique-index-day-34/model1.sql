@@ -16,6 +16,7 @@ insert into users(user_name) values ('Bahodir'), ('Jakhongir'), ('Javohir'), ('U
 
 -- 3 table
 create table knowledge (
+  
   knowledge_id serial not null primary key,
   user_id int not null references users(user_id),
   language_id int not null references languages(language_id)
