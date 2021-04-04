@@ -127,3 +127,17 @@ group by
   u.user_id
 ;
 
+
+--string agg:
+-- Bu biz bizga value larni concatenation qilib beradi. va ularni hammasi bitta string bo'ladi.
+SELECT
+  u.user_name as name,
+  string_agg(c.contact_email, ', ') as email,
+  string_agg(c.contact_tel::varchar, ', ') as tel
+from
+  contacts as c
+join
+  users as u using(user_id)
+group by
+  u.user_id
+;
